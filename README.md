@@ -15,13 +15,13 @@ composer require laravist/geecaptcha
 ```
 
 1. 实例化
-```
+```php
  $captcha = new \App\GeeCaptcha\GeeCaptcha($captcha_id, $private_key);
 ```
 
 2. 使用的使用可以这样判断验证码是否验证成功（通常是post路由里）：
 
-```
+```php
  if ($captcha->isFromGTServer() && $captcha->success()) 
  {
      // 登录的代码逻辑在这里   
@@ -32,7 +32,7 @@ composer require laravist/geecaptcha
 
 3. 对于需要重新生成验证码的时候（通常放在get方式的路由里）：
 
-```
+```php
 $captcha = new \App\GeeCaptcha\GeeCaptcha($captcha_id, $private_key);
 echo $captcha->GTServerIsNormal();
 ```
@@ -41,7 +41,7 @@ echo $captcha->GTServerIsNormal();
 
 routes
 
-```
+```php
 Route::group(['middleware' => ['web']], function () {
     Route::get('/login', function () {
         return view('login');
@@ -71,7 +71,7 @@ Route::group(['middleware' => ['web']], function () {
 ```
 login视图:
 
-```
+```html
 <!DOCTYPE html>
 <html>
     <head>
