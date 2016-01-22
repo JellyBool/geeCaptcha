@@ -3,6 +3,10 @@
 
 >说明：由于geetest本身的composer package有很多不必要的文件，这里是最精简的版本，只用于验证码验证。
 
+## 演示
+
+![geetesst](https://cloud.githubusercontent.com/assets/6011686/12508320/385a56a6-c136-11e5-9353-b686c85bd37a.gif)
+
 ## Usage
 
 安装 （目前的版本是 1.0）：
@@ -127,3 +131,5 @@ login视图:
 </html>
 
 ```
+
+
