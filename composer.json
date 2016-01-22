@@ -1,0 +1,17 @@
+{
+    "name": "laravist/geecaptcha",
+    "description": "A geetest captcha package by laravist",
+    "type": "php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JellyBool",
+            "email": "jellybool@outlook.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Laravist\\GeeCaptcha\\": "src/"
+        }
+    }
+}
