@@ -1,5 +1,4 @@
-# geeCaptcha
-极验证 Composer Package
+# 极验证 Composer Package
 
 >说明：由于geetest本身的composer package有很多不必要的文件，这里是最精简的版本，只用于验证码验证。
 
