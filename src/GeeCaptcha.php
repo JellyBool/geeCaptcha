@@ -1,15 +1,12 @@
 <?php
+
 namespace Laravist\GeeCaptcha;
 
 /**
- * Class GeeCaptcha
- * @package Laravist\GeeCaptcha
- *
- * 继承与GeeTest原本的类，修正了const PRIVATE_KEY 的使用
+ * Class GeeCaptcha.
  */
-class GeeCaptcha extends GeetestLib{
-
-
+class GeeCaptcha extends GeetestLib
+{
     /**
      * @return bool
      *
@@ -18,7 +15,8 @@ class GeeCaptcha extends GeetestLib{
     public function isFromGTServer()
     {
         session_start();
-        return $_SESSION['gtserver'] == 1 ;
+
+        return $_SESSION['gtserver'] == 1;
     }
 
     /**
@@ -40,8 +38,7 @@ class GeeCaptcha extends GeetestLib{
      */
     public function hasAnswer()
     {
-        return $this->get_answer($_POST['geetest_challenge'],$_POST['geetest_validate']);
-
+        return $this->get_answer($_POST['geetest_challenge'], $_POST['geetest_validate']);
     }
 
     /**
@@ -57,5 +54,4 @@ class GeeCaptcha extends GeetestLib{
 
         return $this->response_str;
     }
-
 }
