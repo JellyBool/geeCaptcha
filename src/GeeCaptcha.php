@@ -26,7 +26,7 @@ class GeeCaptcha extends GeetestLib
      */
     public function success()
     {
-        $result = $this->validate($_POST['geetest_challenge'], $_POST['geetest_validate'], $_POST['geetest_seccode']);
+        $result = $this->success_validate($_POST['geetest_challenge'], $_POST['geetest_validate'], $_POST['geetest_seccode']);
 
         return $result;
     }
@@ -38,7 +38,7 @@ class GeeCaptcha extends GeetestLib
      */
     public function hasAnswer()
     {
-        return $this->get_answer($_POST['geetest_challenge'], $_POST['geetest_validate']);
+        return $this->fail_validate($_POST['geetest_challenge'], $_POST['geetest_validate']);
     }
 
     /**
@@ -52,6 +52,6 @@ class GeeCaptcha extends GeetestLib
         $status = $this->pre_process();
         $_SESSION['gtserver'] = $status;
 
-        return $this->response_str;
+        return $this->get_response_str();
     }
 }
