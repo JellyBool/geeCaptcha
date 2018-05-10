@@ -7,6 +7,15 @@ namespace Laravist\GeeCaptcha;
  */
 class GeeCaptcha extends GeetestLib
 {
+    public function __construct($captcha_id, $private_key)
+	{
+        if (! session_id()) {
+            session_start();
+        }
+
+        parent::__construct($captcha_id, $private_key);
+    }
+
     /**
      * @return bool
      *
@@ -14,8 +23,6 @@ class GeeCaptcha extends GeetestLib
      */
     public function isFromGTServer()
     {
-        session_start();
-
         return $_SESSION['gtserver'] == 1;
     }
 
@@ -48,7 +55,6 @@ class GeeCaptcha extends GeetestLib
      */
     public function GTServerIsNormal()
     {
-        session_start();
         $status = $this->pre_process();
         $_SESSION['gtserver'] = $status;
 
